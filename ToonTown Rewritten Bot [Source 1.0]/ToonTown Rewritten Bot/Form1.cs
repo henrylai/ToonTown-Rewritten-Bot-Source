@@ -210,7 +210,6 @@ namespace ToonTown_Rewritten_Bot
                 {
                     g.CopyFromScreen(Point.Empty, Point.Empty, bounds.Size);
                 }
-                //bitmap.Save("C:/Users/Mike/Documents/Visual Studio 2015/Projects/ToonTown Rewritten Bot/ToonTown Rewritten Bot/bin/Debug/test.jpg", ImageFormat.Jpeg);
                 int x = 950;
                 int y = 755;
                 while (y <= 780 && x <= 970)
