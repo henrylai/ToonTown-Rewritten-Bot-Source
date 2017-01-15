@@ -16,7 +16,7 @@ namespace ToonTown_Rewritten_Bot
     {
         public Form1()
         {
-            File.SetAttributes(Path.GetFullPath("InputSimulator.dll"), FileAttributes.Hidden);
+            //File.SetAttributes(Path.GetFullPath("InputSimulator.dll"), FileAttributes.Hidden);
             isTTRRunning();
             InitializeComponent();
             BotFunctions.readTextFile();
