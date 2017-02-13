@@ -9,6 +9,7 @@ namespace ToonTown_Rewritten_Bot
     class Fishing
     {
         private static int x, y;
+        private static Random rand = new Random();
         public static void startFishing(String location, int numberOfCasts, int numberOfTimesToMeetFisherman)
         {
             if (numberOfTimesToMeetFisherman != 0)
@@ -254,7 +255,10 @@ namespace ToonTown_Rewritten_Bot
         private static void castLine()
         {
             getCoords("15");
-            BotFunctions.MoveCursor(x, y);
+            int randX = rand.Next(-25, 26);
+            int ranyY = rand.Next(-25, 26);
+            BotFunctions.MoveCursor(x + randX, y + ranyY);
+            Debug.WriteLine("X variance: " + randX + " \nY Variance: " + ranyY);
             BotFunctions.DoFishingClick();
         }
 
@@ -262,7 +266,7 @@ namespace ToonTown_Rewritten_Bot
         {
             getCoords("15");
             String color = BotFunctions.HexConverter(BotFunctions.GetColorAt(x, y - 600));
-            if (color.Equals("#FFFFBE"))
+            if (color.Equals("#FFFFBE") || color.Equals("#FFFFBF"))
                 return true;//fish caught
             return false;
         }
