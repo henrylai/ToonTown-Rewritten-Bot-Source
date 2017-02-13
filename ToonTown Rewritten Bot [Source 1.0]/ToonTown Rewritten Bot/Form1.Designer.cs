@@ -205,7 +205,7 @@
             this.randomFishing.Size = new System.Drawing.Size(136, 20);
             this.randomFishing.TabIndex = 11;
             this.randomFishing.Text = "Random Variance";
-            this.toolTip1.SetToolTip(this.randomFishing, "This add some randomness and will make it so you won\'t \\ncast your line at the sa" +
+            this.toolTip1.SetToolTip(this.randomFishing, "This add some randomness and will make it so you \r\nwon\'t cast your line at the sa" +
         "me spot every time!");
             this.randomFishing.UseVisualStyleBackColor = true;
             this.randomFishing.CheckedChanged += new System.EventHandler(this.randomFishing_CheckedChanged);
