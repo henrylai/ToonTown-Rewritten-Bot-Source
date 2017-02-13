@@ -5,3 +5,6 @@ ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/bin/Debug/ToonTown Re
 ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/obj/Debug/ToonTown Rewritten Bot.csprojResolveAssemblyReference.cache
 *.Cache
 *.cache
+*.pdb
+*.exe
+*.Cache

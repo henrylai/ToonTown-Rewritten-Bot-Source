@@ -38,6 +38,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.randomFishing = new System.Windows.Forms.CheckBox();
             this.smartFishing = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
@@ -77,7 +78,6 @@
             this.button7 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.randomFishing = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,6 +196,19 @@
             this.groupBox6.TabIndex = 8;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Fishing Locations";
+            // 
+            // randomFishing
+            // 
+            this.randomFishing.AutoSize = true;
+            this.randomFishing.Location = new System.Drawing.Point(166, 69);
+            this.randomFishing.Name = "randomFishing";
+            this.randomFishing.Size = new System.Drawing.Size(136, 20);
+            this.randomFishing.TabIndex = 11;
+            this.randomFishing.Text = "Random Variance";
+            this.toolTip1.SetToolTip(this.randomFishing, "This add some randomness and will make it so you won\'t \\ncast your line at the sa" +
+        "me spot every time!");
+            this.randomFishing.UseVisualStyleBackColor = true;
+            this.randomFishing.CheckedChanged += new System.EventHandler(this.randomFishing_CheckedChanged);
             // 
             // smartFishing
             // 
@@ -653,18 +666,6 @@
             // 
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // randomFishing
-            // 
-            this.randomFishing.AutoSize = true;
-            this.randomFishing.Location = new System.Drawing.Point(166, 69);
-            this.randomFishing.Name = "randomFishing";
-            this.randomFishing.Size = new System.Drawing.Size(136, 20);
-            this.randomFishing.TabIndex = 11;
-            this.randomFishing.Text = "Random Variance";
-            this.toolTip1.SetToolTip(this.randomFishing, "Fishes by searching for the shadows, instead of just casting the line");
-            this.randomFishing.UseVisualStyleBackColor = true;
-            this.randomFishing.CheckedChanged += new System.EventHandler(this.randomFishing_CheckedChanged);
             // 
             // Form1
             // 
