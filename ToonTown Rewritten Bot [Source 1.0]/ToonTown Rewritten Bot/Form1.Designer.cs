@@ -32,6 +32,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.smartFishing = new System.Windows.Forms.CheckBox();
@@ -42,8 +46,9 @@
             this.startFishing = new System.Windows.Forms.Button();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label6 = new System.Windows.Forms.Label();
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.startRacing = new System.Windows.Forms.Button();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
@@ -72,13 +77,10 @@
             this.button7 = new System.Windows.Forms.Button();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.randomFishing = new System.Windows.Forms.CheckBox();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
@@ -95,7 +97,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.tabPage6.SuspendLayout();
             this.groupBox7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -128,6 +129,46 @@
             this.tabPage1.Text = "Main";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button9
+            // 
+            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button9.Location = new System.Drawing.Point(177, 220);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(161, 52);
+            this.button9.TabIndex = 5;
+            this.button9.Text = "Help";
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button8.Location = new System.Drawing.Point(6, 220);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(157, 52);
+            this.button8.TabIndex = 4;
+            this.button8.Text = "About";
+            this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(35, 131);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(0, 16);
+            this.label7.TabIndex = 3;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ToonTown_Rewritten_Bot.Properties.Resources.TTR_Logo;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(332, 110);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.groupBox6);
@@ -141,6 +182,7 @@
             // 
             // groupBox6
             // 
+            this.groupBox6.Controls.Add(this.randomFishing);
             this.groupBox6.Controls.Add(this.smartFishing);
             this.groupBox6.Controls.Add(this.label4);
             this.groupBox6.Controls.Add(this.numericUpDown4);
@@ -158,7 +200,7 @@
             // smartFishing
             // 
             this.smartFishing.AutoSize = true;
-            this.smartFishing.Location = new System.Drawing.Point(166, 59);
+            this.smartFishing.Location = new System.Drawing.Point(166, 51);
             this.smartFishing.Name = "smartFishing";
             this.smartFishing.Size = new System.Drawing.Size(108, 20);
             this.smartFishing.TabIndex = 10;
@@ -180,7 +222,7 @@
             // 
             this.numericUpDown4.Location = new System.Drawing.Point(119, 97);
             this.numericUpDown4.Maximum = new decimal(new int[] {
-            20,
+            50,
             0,
             0,
             0});
@@ -265,13 +307,22 @@
             // 
             this.tabPage3.Controls.Add(this.label6);
             this.tabPage3.Controls.Add(this.richTextBox1);
-            this.tabPage3.Controls.Add(this.button5);
+            this.tabPage3.Controls.Add(this.startRacing);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Size = new System.Drawing.Size(346, 280);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Racing";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(33, 24);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 16);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "Coming Soon....";
             // 
             // richTextBox1
             // 
@@ -283,17 +334,15 @@
             this.richTextBox1.Text = "";
             this.richTextBox1.Visible = false;
             // 
-            // button5
+            // startRacing
             // 
-            this.button5.Enabled = false;
-            this.button5.Location = new System.Drawing.Point(89, 49);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(140, 54);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Race Screwball Stadium";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Visible = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.startRacing.Location = new System.Drawing.Point(89, 49);
+            this.startRacing.Name = "startRacing";
+            this.startRacing.Size = new System.Drawing.Size(140, 54);
+            this.startRacing.TabIndex = 0;
+            this.startRacing.Text = "Race Screwball Stadium";
+            this.startRacing.UseVisualStyleBackColor = true;
+            this.startRacing.Click += new System.EventHandler(this.button5_Click);
             // 
             // tabPage4
             // 
@@ -605,54 +654,17 @@
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // label6
+            // randomFishing
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(33, 24);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 16);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "Coming Soon....";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(35, 131);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(0, 16);
-            this.label7.TabIndex = 3;
-            // 
-            // button8
-            // 
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(6, 220);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(157, 52);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "About";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.button8_Click);
-            // 
-            // button9
-            // 
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button9.Location = new System.Drawing.Point(177, 220);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(161, 52);
-            this.button9.TabIndex = 5;
-            this.button9.Text = "Help";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ToonTown_Rewritten_Bot.Properties.Resources.TTR_Logo;
-            this.pictureBox1.Location = new System.Drawing.Point(6, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(332, 110);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 2;
-            this.pictureBox1.TabStop = false;
+            this.randomFishing.AutoSize = true;
+            this.randomFishing.Location = new System.Drawing.Point(166, 69);
+            this.randomFishing.Name = "randomFishing";
+            this.randomFishing.Size = new System.Drawing.Size(136, 20);
+            this.randomFishing.TabIndex = 11;
+            this.randomFishing.Text = "Random Variance";
+            this.toolTip1.SetToolTip(this.randomFishing, "Fishes by searching for the shadows, instead of just casting the line");
+            this.randomFishing.UseVisualStyleBackColor = true;
+            this.randomFishing.CheckedChanged += new System.EventHandler(this.randomFishing_CheckedChanged);
             // 
             // Form1
             // 
@@ -667,6 +679,7 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
@@ -689,7 +702,6 @@
             this.tabPage6.ResumeLayout(false);
             this.tabPage6.PerformLayout();
             this.groupBox7.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -735,13 +747,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.NumericUpDown numericUpDown3;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button startRacing;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.CheckBox randomFishing;
     }
 }
 

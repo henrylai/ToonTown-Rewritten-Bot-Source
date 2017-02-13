@@ -10,7 +10,7 @@ namespace ToonTown_Rewritten_Bot
     {
         private static int x, y;
         private static Random rand = new Random();
-        public static void startFishing(String location, int numberOfCasts, int numberOfTimesToMeetFisherman)
+        public static void startFishing(String location, int numberOfCasts, int numberOfTimesToMeetFisherman, bool randomFishing)
         {
             if (numberOfTimesToMeetFisherman != 0)
             {
@@ -18,41 +18,41 @@ namespace ToonTown_Rewritten_Bot
                 if (!BotFunctions.checkCoordinates("15"))//if they're 0,0, enter. Checks the red fishing button
                     locateRedFishingButton();
                 //start fishing
-                startFishing(numberOfCasts);
+                startFishing(numberOfCasts, randomFishing);
                 //walking to fisherman
                 switch (location)
                 {
                     case "TOONTOWN CENTRAL PUNCHLINE PLACE":
                         fishTTCPunchlinePlace();//goes to fisherman and back to dock
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "DONALD DREAM LAND LULLABY LANE":
                         fishDDLLullabyLane();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "BRRRGH POLAR PLACE":
                         fishBrrrghPolarPlace();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "BRRRGH WALRUS WAY":
                         fishBrrrghWalrusWay();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "BRRRGH SLEET STREET":
                         fishBrrrghSleetSt();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "MINNIE'S MELODYLAND TENOR TERRACE":
                         fishMMTenorTerrace();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "DONALD DOCK LIGHTHOUSE LANE":
                         fishDDLighthouseLane();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "DAISY'S GARDEN ELM STREET":
                         fishDaisyGardenElmSt();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
                         break;
                     case "FISH ANYWHERE":
                         MessageBox.Show("Done!");
@@ -80,7 +80,7 @@ namespace ToonTown_Rewritten_Bot
             Thread.Sleep(700);
             InputSimulator.SimulateKeyUp(VirtualKeyCode.DOWN);
             InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
-            Thread.Sleep(800);
+            Thread.Sleep(750);
             InputSimulator.SimulateKeyUp(VirtualKeyCode.LEFT);
             InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
             Thread.Sleep(2000);
@@ -200,12 +200,12 @@ namespace ToonTown_Rewritten_Bot
             InputSimulator.SimulateKeyUp(VirtualKeyCode.DOWN);
         }
 
-        private static void startFishing(int numberOfCasts)
+        private static void startFishing(int numberOfCasts, bool fishVariance)
         {
             Stopwatch stopwatch = new Stopwatch();
             while (numberOfCasts != 0)
             {
-                castLine();
+                castLine(fishVariance);
                 stopwatch.Start();
                 while (stopwatch.Elapsed.Seconds < 30 && !checkIfFishCaught())
                 {
@@ -252,11 +252,16 @@ namespace ToonTown_Rewritten_Bot
             }
         }
 
-        private static void castLine()
+        private static void castLine(bool fishVariance)
         {
             getCoords("15");
-            int randX = rand.Next(-25, 26);
-            int ranyY = rand.Next(-25, 26);
+
+            int randX = 0;
+            int ranyY = 0;
+            if (fishVariance) { 
+                randX = rand.Next(-25, 26);
+                ranyY = rand.Next(-25, 26);
+            } 
             BotFunctions.MoveCursor(x + randX, y + ranyY);
             Debug.WriteLine("X variance: " + randX + " \nY Variance: " + ranyY);
             BotFunctions.DoFishingClick();

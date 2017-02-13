@@ -14,6 +14,8 @@ namespace ToonTown_Rewritten_Bot
 {
     public partial class Form1 : Form
     {
+        public bool fishVariance = false;
+
         public Form1()
         {
             //File.SetAttributes(Path.GetFullPath("InputSimulator.dll"), FileAttributes.Hidden);
@@ -183,7 +185,7 @@ namespace ToonTown_Rewritten_Bot
             int numberOfSells = Convert.ToInt32(numericUpDown4.Value);
             BotFunctions.tellFishingLocation(selected);
             MessageBox.Show("Make sure you're in the fishing dock before pressing OK!");
-            Fishing.startFishing(selected, numberOfCasts, numberOfSells);
+            Fishing.startFishing(selected, numberOfCasts, numberOfSells, fishVariance);
             MessageBox.Show("Done!");
         }
 
@@ -198,10 +200,10 @@ namespace ToonTown_Rewritten_Bot
 
         private void button5_Click(object sender, EventArgs e)
         {
-            /*MessageBox.Show("Press OK when ready to begin!");
+            MessageBox.Show("Press OK when ready to begin!");
             Thread.Sleep(2000);
             BotFunctions.DoMouseClick();
-            //Racing.startRacing();
+            Racing.startRacing();
 
             Rectangle bounds = Screen.GetWorkingArea(Point.Empty);
             using (Bitmap bitmap = new Bitmap(bounds.Width, bounds.Height))
@@ -218,7 +220,7 @@ namespace ToonTown_Rewritten_Bot
                     x++;
                     y++;
                 }
-            }*/
+            }
         }
 
         private void button8_Click(object sender, EventArgs e)
@@ -244,6 +246,18 @@ namespace ToonTown_Rewritten_Bot
             catch
             {
                 MessageBox.Show("Unable to perform this action", "Error", MessageBoxButtons.OK, MessageBoxIcon.Hand);
+            }
+        }
+
+        private void randomFishing_CheckedChanged(object sender, EventArgs e)
+        {
+            if (randomFishing.Checked)
+            {
+                MessageBox.Show("This will add randomness to the line casting!");
+                fishVariance = true;
+            } else
+            {
+                fishVariance = false;
             }
         }
     }

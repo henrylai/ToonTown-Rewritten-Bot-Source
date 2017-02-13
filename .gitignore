@@ -1,0 +1,7 @@
+*.manifest
+ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/bin/Debug/ToonTown Rewritten Bot.pdb
+*.exe
+*.pdb
+ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/obj/Debug/ToonTown Rewritten Bot.csprojResolveAssemblyReference.cache
+*.Cache
+*.cache
