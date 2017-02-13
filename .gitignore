@@ -1,2 +1,11 @@
 **/bin/Debug/**
 **/obj/Debug/**
+*.exe
+**/*.csproj.FileListAbsolute.txt
+*.pdb
+ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/obj/Debug/ToonTown Rewritten Bot.exe
+*.pdb
+ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/obj/Debug/ToonTown Rewritten Bot.csproj.GenerateResource.Cache
+*.txt
+*.txt
+ToonTown Rewritten Bot [Source 1.0]/ToonTown Rewritten Bot/obj/Debug/ToonTown Rewritten Bot.csproj.FileListAbsolute.txt
