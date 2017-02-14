@@ -8,9 +8,13 @@ namespace ToonTown_Rewritten_Bot
 {
     class Fishing
     {
+        /** The random variance of casting the fishing rod (if enabled).*/
+        public static int VARIANCE = 20;
         private static int x, y;
         private static Random rand = new Random();
-        public static void startFishing(String location, int numberOfCasts, int numberOfTimesToMeetFisherman, bool randomFishing)
+
+
+        public static void startFishing(String location, int numberOfCasts, int numberOfTimesToMeetFisherman, bool randomCasting)
         {
             if (numberOfTimesToMeetFisherman != 0)
             {
@@ -18,41 +22,41 @@ namespace ToonTown_Rewritten_Bot
                 if (!BotFunctions.checkCoordinates("15"))//if they're 0,0, enter. Checks the red fishing button
                     locateRedFishingButton();
                 //start fishing
-                startFishing(numberOfCasts, randomFishing);
+                startFishing(numberOfCasts, randomCasting);
                 //walking to fisherman
                 switch (location)
                 {
                     case "TOONTOWN CENTRAL PUNCHLINE PLACE":
                         fishTTCPunchlinePlace();//goes to fisherman and back to dock
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "DONALD DREAM LAND LULLABY LANE":
                         fishDDLLullabyLane();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "BRRRGH POLAR PLACE":
                         fishBrrrghPolarPlace();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "BRRRGH WALRUS WAY":
                         fishBrrrghWalrusWay();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "BRRRGH SLEET STREET":
                         fishBrrrghSleetSt();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "MINNIE'S MELODYLAND TENOR TERRACE":
                         fishMMTenorTerrace();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "DONALD DOCK LIGHTHOUSE LANE":
                         fishDDLighthouseLane();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "DAISY'S GARDEN ELM STREET":
                         fishDaisyGardenElmSt();
-                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomFishing);
+                        startFishing(location, numberOfCasts, numberOfTimesToMeetFisherman - 1, randomCasting);
                         break;
                     case "FISH ANYWHERE":
                         MessageBox.Show("Done!");
@@ -257,13 +261,13 @@ namespace ToonTown_Rewritten_Bot
             getCoords("15");
 
             int randX = 0;
-            int ranyY = 0;
+            int randY = 0;
             if (fishVariance) { 
-                randX = rand.Next(-25, 26);
-                ranyY = rand.Next(-25, 26);
+                randX = rand.Next(-VARIANCE, VARIANCE+1);
+                randY = rand.Next(-VARIANCE, VARIANCE+1);
             } 
-            BotFunctions.MoveCursor(x + randX, y + ranyY);
-            Debug.WriteLine("X variance: " + randX + " \nY Variance: " + ranyY);
+            BotFunctions.MoveCursor(x + randX, y + randY);
+            Debug.WriteLine("X variance: " + randX + " \nY Variance: " + randY);
             BotFunctions.DoFishingClick();
         }
 
