@@ -273,11 +273,16 @@ namespace ToonTown_Rewritten_Bot
 
         private static bool checkIfFishCaught()
         {
+            bool result = false;
             getCoords("15");
             String color = BotFunctions.HexConverter(BotFunctions.GetColorAt(x, y - 600));
             if (color.Equals("#FFFFBE") || color.Equals("#FFFFBF"))
-                return true;//fish caught
-            return false;
+                result = true;//fish caught
+            // Check if boot caught (smaller catch window)
+            color = BotFunctions.HexConverter(BotFunctions.GetColorAt(x, 110));
+            if (color.Equals("#FFFFBE") || color.Equals("#FFFFBF"))
+                result = true;//fish caught
+            return result;
         }
 
         private static void locateRedFishingButton()
