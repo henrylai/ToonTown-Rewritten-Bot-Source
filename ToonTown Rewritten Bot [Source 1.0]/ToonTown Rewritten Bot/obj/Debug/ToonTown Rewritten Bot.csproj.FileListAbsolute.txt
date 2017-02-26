@@ -15,3 +15,13 @@ c:\users\mike\documents\visual studio 2015\Projects\ToonTown Rewritten Bot\ToonT
 A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\bin\Debug\ToonTown Rewritten Bot.exe.config
 A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown Rewritten Bot.exe
 A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown Rewritten Bot.pdb
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\bin\Debug\ToonTown Rewritten Bot.exe
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\bin\Debug\ToonTown Rewritten Bot.pdb
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown Rewritten Bot.csprojResolveAssemblyReference.cache
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown_Rewritten_Bot.AboutBox1.resources
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown_Rewritten_Bot.Form1.resources
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown_Rewritten_Bot.Help.resources
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown_Rewritten_Bot.Plants.resources
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown_Rewritten_Bot.Properties.Resources.resources
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown_Rewritten_Bot.UpdateCoordsHelper.resources
+A:\Documents\GitHub\Blockinger\ToonTown-Rewritten-Bot-Source\ToonTown Rewritten Bot [Source 1.0]\ToonTown Rewritten Bot\obj\Debug\ToonTown Rewritten Bot.csproj.GenerateResource.Cache
