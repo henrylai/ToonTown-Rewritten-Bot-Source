@@ -5,16 +5,19 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
+using System.Linq;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
 using ToonTown_Rewritten_Bot.Properties;
+using WindowsInput;
 
 namespace ToonTown_Rewritten_Bot
 {
     public partial class Form1 : Form
     {
         public bool fishVariance = false;
+        public Process TTR;
 
         public Form1()
         {
@@ -81,6 +84,7 @@ namespace ToonTown_Rewritten_Bot
             {
                 MessageBox.Show("ToonTown Rewritten is not running!\nPress OK once running.");
             }
+            TTR = Process.GetProcessesByName("TTREngine")[0];
             startInfo.WindowStyle = ProcessWindowStyle.Maximized;
             MessageBox.Show("Make sure your ToonTown Rewritten window is maximized!");
         }
@@ -260,5 +264,202 @@ namespace ToonTown_Rewritten_Bot
                 fishVariance = false;
             }
         }
-    }
+
+        // Maximizes and Focuces TTR
+        private void maximizeAndFocus()
+        {
+            IntPtr hwnd = FindWindowByCaption(IntPtr.Zero, "Toontown Rewritten [BETA]");
+            ShowWindow(hwnd, 6);
+            ShowWindow(hwnd, 3);
+        }
+
+        // GOLF- Afternoon Tee
+        private void golfAfternoonTee_Click(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(2120);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Holey Mackeral
+        private void golfHoleyMackeral(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1000);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Hole on the Range
+        private void golfHoleOnTheRange(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1735);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Seeing green
+        private void golfSeeingGreen(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1790); // 67%
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Hot Links
+        private void golfHotLinks(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.RIGHT);
+            Thread.Sleep(250);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.RIGHT);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1950); // 
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+
+            /*Thread.Sleep(2000);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.RIGHT);
+            //            Thread.Sleep(150);
+            Thread.Sleep(320);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.RIGHT);
+            Thread.Sleep(50);
+
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1200);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL); */
+        }
+
+        // GOLF - Peanut Putter
+        private void golfPeanutPutter(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1920); // 71
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Down the Hatch
+        private void golfDownTheHatch(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.LEFT);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            // Thread.Sleep(2350); //82
+            Thread.Sleep(2500); 
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Swing Time
+        private void golfSwingTime(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.RIGHT);
+            Thread.Sleep(600);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.RIGHT);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1500);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        // GOLF - Hole in fun
+        private void golfHoleInFun(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.UP);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(1200);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+
+        }
+
+
+        // GOLF - Swing A Long
+        private void golfSwingAlong(object sender, EventArgs e)
+        {
+            maximizeAndFocus();
+            Thread.Sleep(500);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.LEFT);
+            Thread.Sleep(100);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.LEFT);
+            Thread.Sleep(50);
+            InputSimulator.SimulateKeyDown(VirtualKeyCode.CONTROL);
+            Thread.Sleep(2150);
+            InputSimulator.SimulateKeyUp(VirtualKeyCode.CONTROL);
+        }
+
+        
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            while(true)
+            {
+                maximizeAndFocus();
+                Thread.Sleep(50);
+                InputSimulator.SimulateKeyDown(VirtualKeyCode.END);
+                Thread.Sleep(50);
+                InputSimulator.SimulateKeyUp(VirtualKeyCode.END);
+                Thread.Sleep(60000);
+            }
+        }
+
+
+        [DllImport("user32.dll", EntryPoint = "FindWindow")]
+        public static extern IntPtr FindWindowByCaption(IntPtr ZeroOnly, string lpWindowName);
+        
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+        
+        }
+
+    
 }
